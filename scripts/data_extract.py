@@ -518,7 +518,6 @@ def substitute_variables(table_list, link_list, summary_list, game_entity_list, 
             #print(f'{summ} --- {table_contents[position_in_table]}, {table_headers[position_in_table]}, {table_entities[position_in_table]}')
 
             assert position_in_table < table_size, position_in_table
-        print(new_summary)
         new_summary_list.append(new_summary)
     return new_summary_list
 

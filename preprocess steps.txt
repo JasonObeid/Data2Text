@@ -1,0 +1,33 @@
+python3 scripts/data_extract.py -d rotowire/valid.json -o rotowire/valid
+python3 scripts/data_extract.py -d rotowire/test.json -o rotowire/test
+python3 scripts/data_extract.py -d rotowire/train.json -o rotowire/train
+
+
+python3 scripts/extract_vocab.py -t rotowire/test.gtable -s rotowire/test.summary
+python3 scripts/extract_vocab.py -t rotowire/valid.gtable -s rotowire/valid.summary
+python3 scripts/extract_vocab.py -t rotowire/train.gtable -s rotowire/train.summary
+
+
+python3 model/preprocess_summary_data.py --summary rotowire/train.summary \
+                                        --summary_vocab rotowire/train.summary_vocab \
+                                        --summary_label rotowire/train.summary_label
+
+python3 model/preprocess_table_data.py --table rotowire/train.gtable \
+                                      --table_label rotowire/train.gtable_label \
+                                      --table_vocab rotowire/train.gtable_vocab
+
+python3 model/preprocess_summary_data.py --summary rotowire/test.summary \
+                                        --summary_vocab rotowire/test.summary_vocab \
+                                        --summary_label rotowire/test.summary_label
+
+python3 model/preprocess_table_data.py --table rotowire/test.gtable \
+                                      --table_label rotowire/test.gtable_label \
+                                      --table_vocab rotowire/test.gtable_vocab
+
+python3 model/preprocess_summary_data.py --summary rotowire/valid.summary \
+                                        --summary_vocab rotowire/valid.summary_vocab \
+                                        --summary_label rotowire/valid.summary_label
+
+python3 model/preprocess_table_data.py --table rotowire/valid.gtable \
+                                      --table_label rotowire/valid.gtable_label \
+                                      --table_vocab rotowire/valid.gtable_vocab
