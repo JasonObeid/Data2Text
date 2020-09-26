@@ -34,7 +34,7 @@ def get_parser():
     parser = argparse.ArgumentParser(description="Summary generation")
 
     # main parameters
-    parser.add_argument("--model_path", type=str, default="./model_training/", help="Experiment dump path")
+    parser.add_argument("--model_path", type=str, help="Experiment dump path")
     parser.add_argument("--batch_size", type=int, default=16, help="Number of sentences per batch")
 
     # model / output paths
@@ -153,6 +153,7 @@ if __name__ == '__main__':
     params = parser.parse_args()
 
     # check parameters
+    print(params.model_path)
     assert os.path.isfile(params.model_path)
 #    assert params.output_path and not os.path.isfile(params.output_path)
 

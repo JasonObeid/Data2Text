@@ -1,0 +1,904 @@
+INFO - 09/25/20 12:52:41 - 0:00:00 - ============ Initialized logger ============
+INFO - 09/25/20 12:52:41 - 0:00:00 - asm: False
+                                     attention_dropout: 0.1
+                                     batch_size: 6
+                                     beam_size: 4
+                                     clip_grad_norm: 5
+                                     command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True --exp_id "run1"
+                                     cs_step: True
+                                     cuda: True
+                                     dec_n_layers: 6
+                                     dropout: 0.1
+                                     early_stopping: True
+                                     emb_dim: 512
+                                     enc_n_layers: 1
+                                     encoder_only: False
+                                     encoder_positional_emb: False
+                                     epoch_size: 1000
+                                     eval_bleu: True
+                                     eval_cs: False
+                                     eval_only: False
+                                     exp_id: run1
+                                     exp_name: chart2text
+                                     gelu_activation: True
+                                     group_by_size: True
+                                     label_smoothing: 0.05
+                                     lambda_cs: 1
+                                     lambda_lm: 0
+                                     lambda_sm: 1
+                                     length_penalty: 1.0
+                                     lm_step: False
+                                     max_batch_size: 0
+                                     max_epoch: 81
+                                     max_len: 100
+                                     model_path: experiments/chart2text/run1
+                                     n_heads: 8
+                                     optimizer: adam,lr=0.0001
+                                     reload_checkpoint: 
+                                     reload_emb: 
+                                     reload_model: 
+                                     reload_model_strict: False
+                                     save_periodic: 1
+                                     share_inout_emb: True
+                                     share_srctgt_emb: False
+                                     sinusoidal_embeddings: False
+                                     sm_step: True
+                                     sm_step_with_cc_loss: False
+                                     sm_step_with_cs_proba: False
+                                     split_data: False
+                                     stopping_criterion: 
+                                     tokens_per_batch: -1
+                                     train_cs_table_path: rotowire/train.gtable.pth
+                                     train_sm_summary_path: rotowire/train.summary.pth
+                                     train_sm_table_path: rotowire/train.gtable.pth
+                                     valid_summary_path: rotowire/valid.summary.pth
+                                     valid_table_path: rotowire/valid.gtable.pth
+                                     validation_metrics: valid_mt_bleu
+INFO - 09/25/20 12:52:41 - 0:00:00 - The experiment will be stored in experiments/chart2text/run1
+                                     
+INFO - 09/25/20 12:52:41 - 0:00:00 - Running command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True
+
+INFO - 09/25/20 12:52:41 - 0:00:00 - ============ Data summary ============
+INFO - 09/25/20 12:52:41 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 12:52:41 - 0:00:00 - Removed 0 empty sentences.
+
+INFO - 09/25/20 12:52:41 - 0:00:00 - Content-Selection Data -       3398
+INFO - 09/25/20 12:52:41 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 12:52:41 - 0:00:00 - Loading data from rotowire/train.summary.pth ...
+INFO - 09/25/20 12:52:41 - 0:00:00 - Removed 0 empty sentences.
+INFO - 09/25/20 12:52:42 - 0:00:00 - Removed 0 empty sentences.
+INFO - 09/25/20 12:52:42 - 0:00:00 - Para Data          -       3398
+INFO - 09/25/20 12:52:42 - 0:00:00 - Loading data from rotowire/valid.gtable.pth ...
+INFO - 09/25/20 12:52:42 - 0:00:00 - Loading data from rotowire/valid.summary.pth ...
+INFO - 09/25/20 12:53:45 - 0:00:00 - ============ Initialized logger ============
+INFO - 09/25/20 12:53:45 - 0:00:00 - asm: False
+                                     attention_dropout: 0.1
+                                     batch_size: 6
+                                     beam_size: 4
+                                     clip_grad_norm: 5
+                                     command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True --exp_id "run1"
+                                     cs_step: True
+                                     cuda: True
+                                     dec_n_layers: 6
+                                     dropout: 0.1
+                                     early_stopping: True
+                                     emb_dim: 512
+                                     enc_n_layers: 1
+                                     encoder_only: False
+                                     encoder_positional_emb: False
+                                     epoch_size: 1000
+                                     eval_bleu: True
+                                     eval_cs: False
+                                     eval_only: False
+                                     exp_id: run1
+                                     exp_name: chart2text
+                                     gelu_activation: True
+                                     group_by_size: True
+                                     label_smoothing: 0.05
+                                     lambda_cs: 1
+                                     lambda_lm: 0
+                                     lambda_sm: 1
+                                     length_penalty: 1.0
+                                     lm_step: False
+                                     max_batch_size: 0
+                                     max_epoch: 81
+                                     max_len: 100
+                                     model_path: experiments/chart2text/run1
+                                     n_heads: 8
+                                     optimizer: adam,lr=0.0001
+                                     reload_checkpoint: 
+                                     reload_emb: 
+                                     reload_model: 
+                                     reload_model_strict: False
+                                     save_periodic: 1
+                                     share_inout_emb: True
+                                     share_srctgt_emb: False
+                                     sinusoidal_embeddings: False
+                                     sm_step: True
+                                     sm_step_with_cc_loss: False
+                                     sm_step_with_cs_proba: False
+                                     split_data: False
+                                     stopping_criterion: 
+                                     tokens_per_batch: -1
+                                     train_cs_table_path: rotowire/train.gtable.pth
+                                     train_sm_summary_path: rotowire/train.summary.pth
+                                     train_sm_table_path: rotowire/train.gtable.pth
+                                     valid_summary_path: rotowire/valid.summary.pth
+                                     valid_table_path: rotowire/valid.gtable.pth
+                                     validation_metrics: valid_mt_bleu
+INFO - 09/25/20 12:53:45 - 0:00:00 - The experiment will be stored in experiments/chart2text/run1
+                                     
+INFO - 09/25/20 12:53:45 - 0:00:00 - Running command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True
+
+INFO - 09/25/20 12:53:45 - 0:00:00 - ============ Data summary ============
+INFO - 09/25/20 12:53:45 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 12:53:45 - 0:00:00 - Removed 0 empty sentences.
+
+INFO - 09/25/20 12:53:45 - 0:00:00 - Content-Selection Data -       3398
+INFO - 09/25/20 12:53:45 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 12:53:45 - 0:00:00 - Loading data from rotowire/train.summary.pth ...
+INFO - 09/25/20 12:53:45 - 0:00:00 - Removed 0 empty sentences.
+INFO - 09/25/20 12:53:45 - 0:00:00 - Removed 0 empty sentences.
+INFO - 09/25/20 12:53:45 - 0:00:00 - Para Data          -       3398
+INFO - 09/25/20 12:53:45 - 0:00:00 - Loading data from rotowire/valid.gtable.pth ...
+INFO - 09/25/20 12:53:45 - 0:00:00 - Loading data from rotowire/valid.summary.pth ...
+INFO - 09/25/20 12:55:42 - 0:00:00 - ============ Initialized logger ============
+INFO - 09/25/20 12:55:42 - 0:00:00 - asm: False
+                                     attention_dropout: 0.1
+                                     batch_size: 6
+                                     beam_size: 4
+                                     clip_grad_norm: 5
+                                     command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True --exp_id "run1"
+                                     cs_step: True
+                                     cuda: True
+                                     dec_n_layers: 6
+                                     dropout: 0.1
+                                     early_stopping: True
+                                     emb_dim: 512
+                                     enc_n_layers: 1
+                                     encoder_only: False
+                                     encoder_positional_emb: False
+                                     epoch_size: 1000
+                                     eval_bleu: True
+                                     eval_cs: False
+                                     eval_only: False
+                                     exp_id: run1
+                                     exp_name: chart2text
+                                     gelu_activation: True
+                                     group_by_size: True
+                                     label_smoothing: 0.05
+                                     lambda_cs: 1
+                                     lambda_lm: 0
+                                     lambda_sm: 1
+                                     length_penalty: 1.0
+                                     lm_step: False
+                                     max_batch_size: 0
+                                     max_epoch: 81
+                                     max_len: 100
+                                     model_path: experiments/chart2text/run1
+                                     n_heads: 8
+                                     optimizer: adam,lr=0.0001
+                                     reload_checkpoint: 
+                                     reload_emb: 
+                                     reload_model: 
+                                     reload_model_strict: False
+                                     save_periodic: 1
+                                     share_inout_emb: True
+                                     share_srctgt_emb: False
+                                     sinusoidal_embeddings: False
+                                     sm_step: True
+                                     sm_step_with_cc_loss: False
+                                     sm_step_with_cs_proba: False
+                                     split_data: False
+                                     stopping_criterion: 
+                                     tokens_per_batch: -1
+                                     train_cs_table_path: rotowire/train.gtable.pth
+                                     train_sm_summary_path: rotowire/train.summary.pth
+                                     train_sm_table_path: rotowire/train.gtable.pth
+                                     valid_summary_path: rotowire/valid.summary.pth
+                                     valid_table_path: rotowire/valid.gtable.pth
+                                     validation_metrics: valid_mt_bleu
+INFO - 09/25/20 12:55:42 - 0:00:00 - The experiment will be stored in experiments/chart2text/run1
+                                     
+INFO - 09/25/20 12:55:42 - 0:00:00 - Running command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True
+
+INFO - 09/25/20 12:55:42 - 0:00:00 - ============ Data summary ============
+INFO - 09/25/20 12:55:42 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 12:55:42 - 0:00:00 - Removed 0 empty sentences.
+
+INFO - 09/25/20 12:55:42 - 0:00:00 - Content-Selection Data -       3398
+INFO - 09/25/20 12:55:42 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 12:55:42 - 0:00:00 - Loading data from rotowire/train.summary.pth ...
+INFO - 09/25/20 12:55:51 - 0:00:00 - ============ Initialized logger ============
+INFO - 09/25/20 12:55:51 - 0:00:00 - asm: False
+                                     attention_dropout: 0.1
+                                     batch_size: 6
+                                     beam_size: 4
+                                     clip_grad_norm: 5
+                                     command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True --exp_id "run1"
+                                     cs_step: True
+                                     cuda: True
+                                     dec_n_layers: 6
+                                     dropout: 0.1
+                                     early_stopping: True
+                                     emb_dim: 512
+                                     enc_n_layers: 1
+                                     encoder_only: False
+                                     encoder_positional_emb: False
+                                     epoch_size: 1000
+                                     eval_bleu: True
+                                     eval_cs: False
+                                     eval_only: False
+                                     exp_id: run1
+                                     exp_name: chart2text
+                                     gelu_activation: True
+                                     group_by_size: True
+                                     label_smoothing: 0.05
+                                     lambda_cs: 1
+                                     lambda_lm: 0
+                                     lambda_sm: 1
+                                     length_penalty: 1.0
+                                     lm_step: False
+                                     max_batch_size: 0
+                                     max_epoch: 81
+                                     max_len: 100
+                                     model_path: experiments/chart2text/run1
+                                     n_heads: 8
+                                     optimizer: adam,lr=0.0001
+                                     reload_checkpoint: 
+                                     reload_emb: 
+                                     reload_model: 
+                                     reload_model_strict: False
+                                     save_periodic: 1
+                                     share_inout_emb: True
+                                     share_srctgt_emb: False
+                                     sinusoidal_embeddings: False
+                                     sm_step: True
+                                     sm_step_with_cc_loss: False
+                                     sm_step_with_cs_proba: False
+                                     split_data: False
+                                     stopping_criterion: 
+                                     tokens_per_batch: -1
+                                     train_cs_table_path: rotowire/train.gtable.pth
+                                     train_sm_summary_path: rotowire/train.summary.pth
+                                     train_sm_table_path: rotowire/train.gtable.pth
+                                     valid_summary_path: rotowire/valid.summary.pth
+                                     valid_table_path: rotowire/valid.gtable.pth
+                                     validation_metrics: valid_mt_bleu
+INFO - 09/25/20 12:55:51 - 0:00:00 - The experiment will be stored in experiments/chart2text/run1
+                                     
+INFO - 09/25/20 12:55:51 - 0:00:00 - Running command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True
+
+INFO - 09/25/20 12:55:51 - 0:00:00 - ============ Data summary ============
+INFO - 09/25/20 12:55:51 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 12:55:51 - 0:00:00 - Removed 0 empty sentences.
+
+INFO - 09/25/20 12:55:51 - 0:00:00 - Content-Selection Data -       3398
+INFO - 09/25/20 12:55:51 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 12:55:51 - 0:00:00 - Loading data from rotowire/train.summary.pth ...
+INFO - 09/25/20 12:56:28 - 0:00:00 - ============ Initialized logger ============
+INFO - 09/25/20 12:56:28 - 0:00:00 - asm: False
+                                     attention_dropout: 0.1
+                                     batch_size: 6
+                                     beam_size: 4
+                                     clip_grad_norm: 5
+                                     command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True --exp_id "run1"
+                                     cs_step: True
+                                     cuda: True
+                                     dec_n_layers: 6
+                                     dropout: 0.1
+                                     early_stopping: True
+                                     emb_dim: 512
+                                     enc_n_layers: 1
+                                     encoder_only: False
+                                     encoder_positional_emb: False
+                                     epoch_size: 1000
+                                     eval_bleu: True
+                                     eval_cs: False
+                                     eval_only: False
+                                     exp_id: run1
+                                     exp_name: chart2text
+                                     gelu_activation: True
+                                     group_by_size: True
+                                     label_smoothing: 0.05
+                                     lambda_cs: 1
+                                     lambda_lm: 0
+                                     lambda_sm: 1
+                                     length_penalty: 1.0
+                                     lm_step: False
+                                     max_batch_size: 0
+                                     max_epoch: 81
+                                     max_len: 100
+                                     model_path: experiments/chart2text/run1
+                                     n_heads: 8
+                                     optimizer: adam,lr=0.0001
+                                     reload_checkpoint: 
+                                     reload_emb: 
+                                     reload_model: 
+                                     reload_model_strict: False
+                                     save_periodic: 1
+                                     share_inout_emb: True
+                                     share_srctgt_emb: False
+                                     sinusoidal_embeddings: False
+                                     sm_step: True
+                                     sm_step_with_cc_loss: False
+                                     sm_step_with_cs_proba: False
+                                     split_data: False
+                                     stopping_criterion: 
+                                     tokens_per_batch: -1
+                                     train_cs_table_path: rotowire/train.gtable.pth
+                                     train_sm_summary_path: rotowire/train.summary.pth
+                                     train_sm_table_path: rotowire/train.gtable.pth
+                                     valid_summary_path: rotowire/valid.summary.pth
+                                     valid_table_path: rotowire/valid.gtable.pth
+                                     validation_metrics: valid_mt_bleu
+INFO - 09/25/20 12:56:28 - 0:00:00 - The experiment will be stored in experiments/chart2text/run1
+                                     
+INFO - 09/25/20 12:56:28 - 0:00:00 - Running command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True
+
+INFO - 09/25/20 12:56:28 - 0:00:00 - ============ Data summary ============
+INFO - 09/25/20 12:56:28 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 12:56:28 - 0:00:00 - Removed 0 empty sentences.
+
+INFO - 09/25/20 12:56:28 - 0:00:00 - Content-Selection Data -       3398
+INFO - 09/25/20 12:56:28 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 12:56:28 - 0:00:00 - Loading data from rotowire/train.summary.pth ...
+INFO - 09/25/20 13:03:48 - 0:00:00 - ============ Initialized logger ============
+INFO - 09/25/20 13:03:48 - 0:00:00 - asm: False
+                                     attention_dropout: 0.1
+                                     batch_size: 6
+                                     beam_size: 4
+                                     clip_grad_norm: 5
+                                     command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True --exp_id "run1"
+                                     cs_step: True
+                                     cuda: True
+                                     dec_n_layers: 6
+                                     dropout: 0.1
+                                     early_stopping: True
+                                     emb_dim: 512
+                                     enc_n_layers: 1
+                                     encoder_only: False
+                                     encoder_positional_emb: False
+                                     epoch_size: 1000
+                                     eval_bleu: True
+                                     eval_cs: False
+                                     eval_only: False
+                                     exp_id: run1
+                                     exp_name: chart2text
+                                     gelu_activation: True
+                                     group_by_size: True
+                                     label_smoothing: 0.05
+                                     lambda_cs: 1
+                                     lambda_lm: 0
+                                     lambda_sm: 1
+                                     length_penalty: 1.0
+                                     lm_step: False
+                                     max_batch_size: 0
+                                     max_epoch: 81
+                                     max_len: 100
+                                     model_path: experiments/chart2text/run1
+                                     n_heads: 8
+                                     optimizer: adam,lr=0.0001
+                                     reload_checkpoint: 
+                                     reload_emb: 
+                                     reload_model: 
+                                     reload_model_strict: False
+                                     save_periodic: 1
+                                     share_inout_emb: True
+                                     share_srctgt_emb: False
+                                     sinusoidal_embeddings: False
+                                     sm_step: True
+                                     sm_step_with_cc_loss: False
+                                     sm_step_with_cs_proba: False
+                                     split_data: False
+                                     stopping_criterion: 
+                                     tokens_per_batch: -1
+                                     train_cs_table_path: rotowire/train.gtable.pth
+                                     train_sm_summary_path: rotowire/train.summary.pth
+                                     train_sm_table_path: rotowire/train.gtable.pth
+                                     valid_summary_path: rotowire/valid.summary.pth
+                                     valid_table_path: rotowire/valid.gtable.pth
+                                     validation_metrics: valid_mt_bleu
+INFO - 09/25/20 13:03:48 - 0:00:00 - The experiment will be stored in experiments/chart2text/run1
+                                     
+INFO - 09/25/20 13:03:48 - 0:00:00 - Running command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True
+
+INFO - 09/25/20 13:03:48 - 0:00:00 - ============ Data summary ============
+INFO - 09/25/20 13:03:48 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 13:03:48 - 0:00:00 - Removed 0 empty sentences.
+
+INFO - 09/25/20 13:03:48 - 0:00:00 - Content-Selection Data -       3398
+INFO - 09/25/20 13:03:48 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 13:03:48 - 0:00:00 - Loading data from rotowire/train.summary.pth ...
+INFO - 09/25/20 13:03:48 - 0:00:00 - Removed 0 empty sentences.
+INFO - 09/25/20 13:03:48 - 0:00:00 - Removed 0 empty sentences.
+INFO - 09/25/20 13:03:48 - 0:00:00 - Para Data          -       3398
+INFO - 09/25/20 13:03:48 - 0:00:00 - Loading data from rotowire/valid.gtable.pth ...
+INFO - 09/25/20 13:03:48 - 0:00:00 - Loading data from rotowire/valid.summary.pth ...
+INFO - 09/25/20 13:04:23 - 0:00:00 - ============ Initialized logger ============
+INFO - 09/25/20 13:04:23 - 0:00:00 - asm: False
+                                     attention_dropout: 0.1
+                                     batch_size: 6
+                                     beam_size: 4
+                                     clip_grad_norm: 5
+                                     command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True --exp_id "run1"
+                                     cs_step: True
+                                     cuda: True
+                                     dec_n_layers: 6
+                                     dropout: 0.1
+                                     early_stopping: True
+                                     emb_dim: 512
+                                     enc_n_layers: 1
+                                     encoder_only: False
+                                     encoder_positional_emb: False
+                                     epoch_size: 1000
+                                     eval_bleu: True
+                                     eval_cs: False
+                                     eval_only: False
+                                     exp_id: run1
+                                     exp_name: chart2text
+                                     gelu_activation: True
+                                     group_by_size: True
+                                     label_smoothing: 0.05
+                                     lambda_cs: 1
+                                     lambda_lm: 0
+                                     lambda_sm: 1
+                                     length_penalty: 1.0
+                                     lm_step: False
+                                     max_batch_size: 0
+                                     max_epoch: 81
+                                     max_len: 100
+                                     model_path: experiments/chart2text/run1
+                                     n_heads: 8
+                                     optimizer: adam,lr=0.0001
+                                     reload_checkpoint: 
+                                     reload_emb: 
+                                     reload_model: 
+                                     reload_model_strict: False
+                                     save_periodic: 1
+                                     share_inout_emb: True
+                                     share_srctgt_emb: False
+                                     sinusoidal_embeddings: False
+                                     sm_step: True
+                                     sm_step_with_cc_loss: False
+                                     sm_step_with_cs_proba: False
+                                     split_data: False
+                                     stopping_criterion: 
+                                     tokens_per_batch: -1
+                                     train_cs_table_path: rotowire/train.gtable.pth
+                                     train_sm_summary_path: rotowire/train.summary.pth
+                                     train_sm_table_path: rotowire/train.gtable.pth
+                                     valid_summary_path: rotowire/valid.summary.pth
+                                     valid_table_path: rotowire/valid.gtable.pth
+                                     validation_metrics: valid_mt_bleu
+INFO - 09/25/20 13:04:23 - 0:00:00 - The experiment will be stored in experiments/chart2text/run1
+                                     
+INFO - 09/25/20 13:04:23 - 0:00:00 - Running command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True
+
+INFO - 09/25/20 13:04:23 - 0:00:00 - ============ Data summary ============
+INFO - 09/25/20 13:04:23 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 13:04:23 - 0:00:00 - Removed 0 empty sentences.
+
+INFO - 09/25/20 13:04:23 - 0:00:00 - Content-Selection Data -       3398
+INFO - 09/25/20 13:04:23 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 13:04:23 - 0:00:00 - Loading data from rotowire/train.summary.pth ...
+INFO - 09/25/20 13:04:23 - 0:00:00 - Removed 0 empty sentences.
+INFO - 09/25/20 13:04:23 - 0:00:00 - Removed 0 empty sentences.
+INFO - 09/25/20 13:04:23 - 0:00:00 - Para Data          -       3398
+INFO - 09/25/20 13:04:23 - 0:00:00 - Loading data from rotowire/valid.gtable.pth ...
+INFO - 09/25/20 13:04:23 - 0:00:00 - Loading data from rotowire/valid.summary.pth ...
+INFO - 09/25/20 13:04:23 - 0:00:00 - Removed 0 empty sentences.
+INFO - 09/25/20 13:04:23 - 0:00:00 - Removed 0 empty sentences.
+
+DEBUG - 09/25/20 13:04:24 - 0:00:00 - Encoder: TransformerEncoder(
+                                        (embeddings): Embedding(1897, 128, padding_idx=2)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0): TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (pred_layer): BinaryOutputLayer(
+                                          (proj): Linear(in_features=512, out_features=1, bias=True)
+                                          (proj_act): Sigmoid()
+                                          (criterion): BCELoss()
+                                        )
+                                      )
+DEBUG - 09/25/20 13:04:24 - 0:00:00 - Decoder: TransformerDecoder(
+                                        (position_embeddings): Embedding(602, 512)
+                                        (embeddings): Embedding(9921, 512, padding_idx=2)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (1): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (2): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (3): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (4): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (5): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0): TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                          (1): TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                          (2): TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                          (3): TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                          (4): TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                          (5): TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (layer_norm15): ModuleList(
+                                          (0): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (encoder_attn): ModuleList(
+                                          (0): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (1): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (2): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (3): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (4): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (5): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (pred_layer): PredLayer(
+                                          (proj): Linear(in_features=512, out_features=9921, bias=True)
+                                        )
+                                      )
+INFO - 09/25/20 13:04:24 - 0:00:00 - Number of parameters (encoder): 3396737
+INFO - 09/25/20 13:04:24 - 0:00:00 - Number of parameters (decoder): 30622913
+INFO - 09/25/20 13:04:26 - 0:00:02 - ============ Starting epoch 0 ... ============
+INFO - 09/25/20 13:04:26 - 0:00:02 - Creating new training data iterator (cs) ...
+INFO - 09/25/20 13:04:26 - 0:00:03 - Creating new training data iterator (sm) ...
+INFO - 09/25/20 13:04:59 - 0:00:00 - ============ Initialized logger ============
+INFO - 09/25/20 13:04:59 - 0:00:00 - asm: False
+                                     attention_dropout: 0.1
+                                     batch_size: 6
+                                     beam_size: 4
+                                     clip_grad_norm: 5
+                                     command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True --exp_id "run1"
+                                     cs_step: True
+                                     cuda: True
+                                     dec_n_layers: 6
+                                     dropout: 0.1
+                                     early_stopping: True
+                                     emb_dim: 512
+                                     enc_n_layers: 1
+                                     encoder_only: False
+                                     encoder_positional_emb: False
+                                     epoch_size: 1000
+                                     eval_bleu: True
+                                     eval_cs: False
+                                     eval_only: False
+                                     exp_id: run1
+                                     exp_name: chart2text
+                                     gelu_activation: True
+                                     group_by_size: True
+                                     label_smoothing: 0.05
+                                     lambda_cs: 1
+                                     lambda_lm: 0
+                                     lambda_sm: 1
+                                     length_penalty: 1.0
+                                     lm_step: False
+                                     max_batch_size: 0
+                                     max_epoch: 81
+                                     max_len: 100
+                                     model_path: experiments/chart2text/run1
+                                     n_heads: 8
+                                     optimizer: adam,lr=0.0001
+                                     reload_checkpoint: 
+                                     reload_emb: 
+                                     reload_model: 
+                                     reload_model_strict: False
+                                     save_periodic: 1
+                                     share_inout_emb: True
+                                     share_srctgt_emb: False
+                                     sinusoidal_embeddings: False
+                                     sm_step: True
+                                     sm_step_with_cc_loss: False
+                                     sm_step_with_cs_proba: False
+                                     split_data: False
+                                     stopping_criterion: 
+                                     tokens_per_batch: -1
+                                     train_cs_table_path: rotowire/train.gtable.pth
+                                     train_sm_summary_path: rotowire/train.summary.pth
+                                     train_sm_table_path: rotowire/train.gtable.pth
+                                     valid_summary_path: rotowire/valid.summary.pth
+                                     valid_table_path: rotowire/valid.gtable.pth
+                                     validation_metrics: valid_mt_bleu
+INFO - 09/25/20 13:04:59 - 0:00:00 - The experiment will be stored in experiments/chart2text/run1
+                                     
+INFO - 09/25/20 13:04:59 - 0:00:00 - Running command: python model/train.py --model_path experiments --exp_name chart2text --exp_id run1 --train_cs_table_path 'rotowire/train.gtable.pth' --train_sm_table_path 'rotowire/train.gtable.pth' --train_sm_summary_path 'rotowire/train.summary.pth' --valid_table_path 'rotowire/valid.gtable.pth' --valid_summary_path 'rotowire/valid.summary.pth' --cs_step True --lambda_cs 1 --sm_step True --lambda_sm 1 --label_smoothing '0.05' --sm_step_with_cc_loss False --sm_step_with_cs_proba False --share_inout_emb True --share_srctgt_emb False --sinusoidal_embeddings False --emb_dim 512 --enc_n_layers 1 --dec_n_layers 6 --dropout '0.1' --save_periodic 1 --batch_size 6 --beam_size 4 --epoch_size 1000 --eval_bleu True --validation_metrics valid_mt_bleu --max_epoch 81 --gelu_activation True
+
+INFO - 09/25/20 13:04:59 - 0:00:00 - ============ Data summary ============
+INFO - 09/25/20 13:04:59 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 13:04:59 - 0:00:00 - Removed 0 empty sentences.
+
+INFO - 09/25/20 13:04:59 - 0:00:00 - Content-Selection Data -       3398
+INFO - 09/25/20 13:04:59 - 0:00:00 - Loading data from rotowire/train.gtable.pth ...
+INFO - 09/25/20 13:04:59 - 0:00:00 - Loading data from rotowire/train.summary.pth ...
+INFO - 09/25/20 13:04:59 - 0:00:00 - Removed 0 empty sentences.
+INFO - 09/25/20 13:04:59 - 0:00:00 - Removed 0 empty sentences.
+INFO - 09/25/20 13:04:59 - 0:00:00 - Para Data          -       3398
+INFO - 09/25/20 13:04:59 - 0:00:00 - Loading data from rotowire/valid.gtable.pth ...
+INFO - 09/25/20 13:04:59 - 0:00:00 - Loading data from rotowire/valid.summary.pth ...
+INFO - 09/25/20 13:04:59 - 0:00:00 - Removed 0 empty sentences.
+INFO - 09/25/20 13:04:59 - 0:00:00 - Removed 0 empty sentences.
+
+DEBUG - 09/25/20 13:04:59 - 0:00:00 - Encoder: TransformerEncoder(
+                                        (embeddings): Embedding(1897, 128, padding_idx=2)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0): TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (pred_layer): BinaryOutputLayer(
+                                          (proj): Linear(in_features=512, out_features=1, bias=True)
+                                          (proj_act): Sigmoid()
+                                          (criterion): BCELoss()
+                                        )
+                                      )
+DEBUG - 09/25/20 13:04:59 - 0:00:00 - Decoder: TransformerDecoder(
+                                        (position_embeddings): Embedding(602, 512)
+                                        (embeddings): Embedding(9921, 512, padding_idx=2)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (1): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (2): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (3): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (4): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (5): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0): TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                          (1): TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                          (2): TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                          (3): TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                          (4): TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                          (5): TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (layer_norm15): ModuleList(
+                                          (0): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (1): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (2): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (3): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (4): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                          (5): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (encoder_attn): ModuleList(
+                                          (0): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (1): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (2): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (3): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (4): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                          (5): MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (pred_layer): PredLayer(
+                                          (proj): Linear(in_features=512, out_features=9921, bias=True)
+                                        )
+                                      )
+INFO - 09/25/20 13:04:59 - 0:00:00 - Number of parameters (encoder): 3396737
+INFO - 09/25/20 13:04:59 - 0:00:00 - Number of parameters (decoder): 30622913
+INFO - 09/25/20 13:05:01 - 0:00:02 - ============ Starting epoch 0 ... ============
+INFO - 09/25/20 13:05:01 - 0:00:02 - Creating new training data iterator (cs) ...
+INFO - 09/25/20 13:05:02 - 0:00:03 - Creating new training data iterator (sm) ...
+INFO - 09/25/20 13:05:06 - 0:00:07 -      10 -   24.29 sent/s - 11503.60 words/s - cs:  0.3936 (coef=1.0000) || sm:  8.9913 (coef=1.0000) - Transformer LR = 1.0000e-04

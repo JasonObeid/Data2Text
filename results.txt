@@ -1,1 +1,34 @@
-perl model/src/evaluation/multi-bleu.perl data/test/testOriginalSummary.txt < results/aug17/generated-p80.txt
+perl model/src/evaluation/multi-bleu.perl rotowire/valid.orig_summary < results/valid_replaced.txt_clean
+
+python3 model/summarize.py \
+    --model_path "periodic-29.pth"  \
+    --table_path "rotowire/valid.gtable" \
+    --output_path "results/valid_out.txt" \
+    --beam_size 4
+
+
+python3 scripts/variable_replace.py -d rotowire/valid.json -o results/valid_replaced.txt -i results/valid_out.txt
+
+!remove underscores
+cat results/valid_replaced.txt | sed 's/_/ /g' > results/valid_replaced.txt_clean
+
+python2 evaluation/data_utils.py \
+    -mode make_ie_data \
+    -input_path "./rotowire" \
+    -output_fi "roto-ie.h5"
+
+python2 evaluation/data_utils.py \
+    -mode prep_gen_data \
+    -gen_fi results/valid_replaced.txt_clean \
+    -dict_pfx "roto-ie" \
+    -output_fi results/valid_replaced.txt_clean.h5 \
+    -input_path ./rotowire
+
+th evaluation/extractor.lua \
+    -gpuid 1 \
+    -datafile roto-ie.h5 \
+    -preddata results/valid_out.txt_clean.h5 \
+    -dict_pfx roto-ie  \
+    -just_eval
+
+python2 non_rg_metrics.py roto-gold-val.h5-tuples.txt results/valid_out.txt_clean.h5-tuples.txt
