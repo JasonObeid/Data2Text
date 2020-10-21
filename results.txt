@@ -1,16 +1,20 @@
-perl model/src/evaluation/multi-bleu.perl rotowire/valid.orig_summary < results/valid_replaced.txt_clean
+perl model/src/evaluation/multi-bleu.perl rotowire/valid.orig_summary < results/valid_replaced80.txt_clean
+    29 epochs : BLEU = 8.05, 43.1/12.6/4.6/2.4 (BP=0.916, ratio=0.920, hyp_len=227112, ref_len=246935)
+    80 epochs : BLEU = 13.27, 45.2/16.9/8.0/5.0 (BP=1.000, ratio=1.021, hyp_len=251548, ref_len=246483)
 
 python3 model/summarize.py \
-    --model_path "periodic-29.pth"  \
+    --model_path "periodic-80.pth"  \
     --table_path "rotowire/valid.gtable" \
-    --output_path "results/valid_out.txt" \
+    --output_path "results/valid_out80.txt" \
     --beam_size 4
 
 
-python3 scripts/variable_replace.py -d rotowire/valid.json -o results/valid_replaced.txt -i results/valid_out.txt
+python3 scripts/variable_replace.py -d rotowire/valid.json -o results/valid_replaced80.txt -i results/valid_out80.txt
+
+!delete last newline character
 
 !remove underscores
-cat results/valid_replaced.txt | sed 's/_/ /g' > results/valid_replaced.txt_clean
+cat results/valid_replaced80.txt | sed 's/_/ /g' > results/valid_replaced80.txt_clean
 
 python2 evaluation/data_utils.py \
     -mode make_ie_data \
@@ -19,15 +23,15 @@ python2 evaluation/data_utils.py \
 
 python2 evaluation/data_utils.py \
     -mode prep_gen_data \
-    -gen_fi results/valid_replaced.txt_clean \
+    -gen_fi results/valid_replaced80.txt_clean \
     -dict_pfx "roto-ie" \
-    -output_fi results/valid_replaced.txt_clean.h5 \
+    -output_fi results/valid_replaced80.txt_clean.h5 \
     -input_path ./rotowire
 
 th evaluation/extractor.lua \
     -gpuid 1 \
     -datafile roto-ie.h5 \
-    -preddata results/valid_out.txt_clean.h5 \
+    -preddata results/valid_replaced80.txt_clean.h5 \
     -dict_pfx roto-ie  \
     -just_eval
 
